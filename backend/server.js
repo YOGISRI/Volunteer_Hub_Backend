@@ -8,6 +8,7 @@ import users from "./routes/users.js";
 import  supabase from "./config/supabaseClient.js";
 import message from "./routes/message.js";
 import groupEventRoutes from "./routes/groupEvent.js";
+import ImpactRoute from "./routes/ImpactRoute.js"
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.use("/api/opportunities", opportunitiesRoutes);
 app.use("/api/users", users);
 app.use("/api/messages", message);
 app.use("/api/group-events", groupEventRoutes);
+app.use("/api/impact", ImpactRoute);
 // Health check
 app.get("/", (req, res) => {
   res.send("Volunteer Hub API Running");
